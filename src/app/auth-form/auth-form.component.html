@@ -1,0 +1,24 @@
+<div>
+  <form (ngSubmit)="onSubmit(formUser.value)" #formUser="ngForm" novalidate>
+    <ng-content select="h3"></ng-content>
+    <div>
+      <label>
+        Email address
+        <input type="email" name="email" ngModel>
+      </label>
+    </div>
+    <div>
+      <label>
+        Password
+        <input type="password" name="password" ngModel>
+      </label>
+    </div>
+    <div>
+      <ng-content select="app-auth-remember"></ng-content>
+      <div *ngIf="showMessage">
+        You will be logged in for 30 days
+      </div>
+      <ng-content select="button"></ng-content>
+    </div>
+  </form>
+</div>
